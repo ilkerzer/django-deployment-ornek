@@ -1,0 +1,22 @@
+{% extends 'basic_app/base.html' %}
+
+{% block baslik %} Giriş Yap {% endblock %}
+
+{% block icerik %}
+<h1>Giriş Yapın:</h1>
+<form method="post" >
+    {% csrf_token %}
+    <div class="mb-3" >
+        <label for="username" >Username</label>
+        <input type="text" id="username" name="username"  class="form-control" placeholder="Kullanıcı adı giriniz" >
+    </div>
+    <div class="mb-3" >
+        <label for="password" >Şifre</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Şifre giriniz" >
+    </div>
+    <input type="submit" class="btn btn-primary" value="Giriş Yap" >
+
+</form>
+
+
+{% endblock %}

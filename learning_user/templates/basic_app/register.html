@@ -1,0 +1,26 @@
+{% extends 'basic_app/base.html' %}
+
+{% block baslik %}
+    Üye Ol
+{% endblock %}
+
+{% block icerik %}
+
+{% if registered %}
+        <h1>Thank you for registering</h1>
+
+        {% else %}
+        <h1>Fill the register form:</h1>
+        <form method="post" enctype="multipart/form-data" novalidate >
+            {% csrf_token %}
+            {{ userform.as_p }}
+            {{ profilform.as_p }}
+            <input type="submit" class="btn btn-primary" value="Üye Ol" >
+        </form>
+
+      {% endif %}
+
+
+
+{% endblock %}
+
